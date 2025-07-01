@@ -33,6 +33,9 @@ def main():
         ## set screen to black
         screen.fill(000000)
 
+        ##rotate player
+        player.update(dt)
+
         ##draw player
         player.draw(screen)
 
