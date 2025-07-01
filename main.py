@@ -51,6 +51,11 @@ def main():
         # rotate player +
         updatable.update(dt)
 
+        # check collisions
+        for each in asteroids:
+            if each.collision(player):
+                raise SystemExit("Game over!")
+
         # draw player +
         for each in drawable:
             each.draw(screen)
