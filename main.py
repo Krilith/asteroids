@@ -1,10 +1,32 @@
+###imports
 import pygame
 from constants import *
 
+
+##Main game 
 def main():
+    ## initilize imported pygame modules
+    pygame.init()
+
+    ## console print stuff at launch
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
 
+    ##start gui
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+    ##start of loop
+    while True:
+        ##Makes windows close button work
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+            
+        screen.fill(000000)
+
+        pygame.display.flip()
+
+##Start main if executed, not imported
 if __name__ == "__main__":
     main()
