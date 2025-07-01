@@ -57,6 +57,12 @@ def main():
         for each in asteroids:
             if each.collision(player):
                 raise SystemExit("Game over!")
+            for those in shots:
+                if each.collision(those):
+                    each.kill()
+                    those.kill()
+
+
 
         # draw player +
         for each in drawable:
