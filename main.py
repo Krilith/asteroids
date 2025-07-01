@@ -1,7 +1,7 @@
 ###imports
 import pygame
 from constants import *
-
+from player import *
 
 ##Main game 
 def main():
@@ -12,6 +12,9 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    ##Create player
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    
     ## console print stuff at launch
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
@@ -29,6 +32,9 @@ def main():
             
         ## set screen to black
         screen.fill(000000)
+
+        ##draw player
+        player.draw(screen)
 
         ##update screen
         pygame.display.flip()
