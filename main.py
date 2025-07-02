@@ -59,8 +59,8 @@ def main():
                 raise SystemExit("Game over!")
             for those in shots:
                 if each.collision(those):
-                    each.kill()
                     those.kill()
+                    each.split(each.position)
 
 
 
